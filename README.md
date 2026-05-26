@@ -350,6 +350,39 @@ python run.py --dry-run
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+
+## How Other Developers Run the Project
+
+When someone else clones repository to run it locally, they need to do the following things
+
+### Clone & Setup
+
+After cloning the repository, simply run:
+
+```bash
+sh setup.sh
+```
+
+### Automated Environment File Creation
+
+The `setup.sh` script automatically checks whether a `.env` file exists.
+
+If it does not exist, the script creates one automatically from `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+### Add Their Own Gemini API Key
+
+The developer then opens the generated `.env` file and adds their own Gemini API key:
+
+```bash
+GEMINI_API_KEY=your_actual_api_key_here
+```
+
+This keeps sensitive credentials out of version control while still making setup easy for new developers.
+
 ## License
 
 MIT License - Feel free to use and modify.
