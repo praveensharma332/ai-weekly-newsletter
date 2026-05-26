@@ -1,0 +1,8 @@
+Analyze the following group of related articles on the topic of '{topic}'.
+Write a synthesized weekly briefing paragraph that connects these developments.
+Explain *why* this group of updates matters to AI software engineers and infrastructure architects.
+Identify the underlying industry trend, architectural consensus, or hardware shifts.
+Be technically precise, concise, and professional.
+
+Articles:
+{articles_text}

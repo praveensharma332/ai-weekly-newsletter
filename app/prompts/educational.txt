@@ -1,0 +1,11 @@
+Create a highly informative educational deep-dive section on '{topic}'.
+The explanation must be:
+1. Beginner friendly but technically accurate and rigorous.
+2. Highly engineering focused (discuss performance, memory overhead, optimization, GPU bottlenecks, etc.).
+3. Concise but deep.
+
+Use clear headings, markdown lists, and small ascii diagrams if helpful to explain mechanics.
+Structure exactly as:
+- **The Core Concept**: What is it and why does it exist?
+- **How It Works**: Mechanistic step-by-step breakdown.
+- **Engineering Considerations**: Memory, GPU execution, performance trade-offs, and standard scaling behaviors.

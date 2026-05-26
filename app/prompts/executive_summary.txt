@@ -1,0 +1,3 @@
+Write a high-density, professional bulleted TLDR summary of the 3-4 most critical developments represented in this week's newsletter.
+Focus strictly on the business and engineering impact, bypassing all PR hype.
+Provide exactly 3-4 bullet points.

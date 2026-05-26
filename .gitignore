@@ -1,0 +1,42 @@
+# Virtual Environments (highly recommended)
+venv/
+.venv/
+env/
+ENV/
+
+# Local Environment Secrets (CRITICAL for security)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Local Databases, embeddings, and raw fetch caches
+*.db
+*.sqlite3
+data/database/
+data/raw_articles/
+data/embeddings/
+data/newsletters/
+
+# Python Caches & Build Files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Operating System & IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log

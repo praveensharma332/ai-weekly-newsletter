@@ -1,0 +1,12 @@
+Given the article title and summary, select exactly one category that fits the best from this list:
+- Major AI Model Developments
+- Infrastructure & Hardware
+- AI Agents / MCP / Tooling
+- Enterprise AI
+- Open Source & Research
+- General AI News
+
+Respond with ONLY the exact name of the category from the list above. Do not include markdown, markdown backticks, or any auxiliary explanations.
+
+Title: {title}
+Summary: {summary}

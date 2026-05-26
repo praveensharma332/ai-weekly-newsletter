@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <!-- Import Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --surface-color: #151d30;
+            --surface-accent: #1e2942;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow-primary: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Light/Dark mode compatibility support */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-color: #f8fafc;
+                --surface-color: #ffffff;
+                --surface-accent: #f1f5f9;
+                --text-primary: #0f172a;
+                --text-secondary: #475569;
+                --border-color: rgba(0, 0, 0, 0.08);
+                --shadow-primary: 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Premium Header Styling */
+        header {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--accent-gradient);
+        }
+
+        .header-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-purple);
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .date {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Executive Briefing Cards */
+        .section-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 36px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-primary);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            border-radius: 4px;
+            background: var(--accent-gradient);
+        }
+
+        /* Sub-headings styling */
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        /* Links styling */
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-cyan);
+            text-decoration: underline;
+        }
+
+        /* Bullet lists */
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Code Block Highlights */
+        pre {
+            background: var(--surface-accent);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* Spotlight highlight card styling */
+        .spotlight-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 36px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-primary);
+            position: relative;
+        }
+
+        .spotlight-badge {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+        }
+
+        .spotlight-card h2 {
+            border: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        /* Final Outlook section card */
+        .outlook-card {
+            background: var(--surface-accent);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .outlook-card h2 {
+            border: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        .outlook-card h2::before {
+            background: var(--accent-cyan);
+            width: 6px;
+            height: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Premium Header -->
+        <header>
+            <span class="header-tag">Weekly Engineering Brief</span>
+            <h1>{{ title }}</h1>
+            <span class="date">{{ issue_date }}</span>
+        </header>
+
+        <!-- Executive Summary Section -->
+        <div class="section-card">
+            <h2>Executive Summary</h2>
+            <div>
+                {{ tldr | safe }}
+            </div>
+        </div>
+
+        <!-- Dynamic Category Briefings -->
+        {% for cat, html_content in sections.items() %}
+            {% if cat != 'Byte-Sized Learning' %}
+                <div class="section-card">
+                    <h2>{{ cat }}</h2>
+                    <div>
+                        {{ html_content | safe }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <!-- Byte-Sized Spotlight -->
+        {% if sections['Byte-Sized Learning'] %}
+            <div class="spotlight-card">
+                <span class="spotlight-badge">Educational Spotlight</span>
+                <h2>Byte-Sized Learning: {{ edu_topic }}</h2>
+                <div>
+                    {{ sections['Byte-Sized Learning'] | safe }}
+                </div>
+            </div>
+        {% endif %}
+
+        <!-- Final Outlook -->
+        <div class="outlook-card">
+            <h2>Macro Outlook</h2>
+            <div>
+                {{ final_outlook | safe }}
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <footer>
+            <span class="footer-logo">AI Weekly Newsletter</span>
+            <p>Automatically curated, semantic-clustered, and synthesized using Google Gemini API.</p>
+            <p>Monitored and maintained at 127.0.0.1. &copy; 2026 AI Weekly Newsletter Corp.</p>
+        </footer>
+    </div>
+</body>
+</html>

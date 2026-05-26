@@ -1,0 +1,4 @@
+Summarize the following technical article. Focus on the core engineering decisions, architectural details, models used, and key findings. Avoid fluffy PR language. Keep the summary technically deep but concise (under {max_words} words).
+
+Article content:
+{text}

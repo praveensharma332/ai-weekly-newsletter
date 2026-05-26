@@ -1,0 +1,26 @@
+We are preparing the final Weekly Technical Newsletter. Below are the grouped developments and a premade educational section.
+
+Draft a complete newsletter containing:
+1. An AI-generated catchy, professional title.
+2. An Executive Summary / TLDR (a bulleted overview of the 3-4 most critical shifts of the week).
+3. Structured Markdown sections for each active development category, writing clean technical copy that ties the developments together beautifully. Add clickable markdown links to the sources.
+4. A concluding 'Final Outlook' explaining the macro trends observed this week.
+
+Ensure the output is formatted as a JSON object with these EXACT keys:
+- "title": "The generated newsletter title"
+- "tldr": "A 3-4 bullet executive summary in markdown"
+- "sections": {{
+    "Major AI Model Developments": "Markdown content for developments",
+    "Infrastructure & Hardware": "Markdown content",
+    "AI Agents / MCP / Tooling": "Markdown content",
+    "Enterprise AI": "Markdown content",
+    "Open Source & Research": "Markdown content",
+    "General AI News": "Markdown content"
+  }},
+- "final_outlook": "Macro outlook summary in markdown"
+
+Data to utilize:
+{developments_text}
+
+Educational Section (Integrate this under the section 'Byte-Sized Learning' in the correct category or as a standalone section):
+{educational_section}

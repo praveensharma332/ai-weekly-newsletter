@@ -1,0 +1,4 @@
+Analyze the macro developments of this week and synthesize a deep-dive trend analysis.
+Compare these developments against historical milestones in the field (e.g. shifts from dense models to MoE, growth of hardware clusters, standardized inference protocols like MCP).
+Outline 3 core predictions for how these developments will affect AI engineering practices in the coming 3-6 months.
+Make the analysis highly technical, rigorous, and professional.
